@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snakes and Ladders</title>
     <link rel="stylesheet" type="text/css" href="./app/web/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="./app/web/css/icons.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
 </head>
 <body>
+    <button class="info-videogame">
+        <span class="material-symbols--info-outline"></span>
+    </button>
     <div class="game-container">
         <div class="game-container-wrapper">
             <div class="game-board">
@@ -18,11 +23,84 @@
         </div>
     </div>
     <div class="player-turn-container">
-
+        <div class="player-turn-container-wrapper">
+            <span class="player-turn"></span>
+        </div>
     </div>
     <div class="dice-container">
-
+        <div class="panel">
+            <div class="dice">
+                <div class="side one">
+                <span class="dot"></span>
+                </div>
+                <div class="side two">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </div>
+                <div class="side three">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                </div>
+                <div class="side four">
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                </div>
+                <div class="side five">
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="kolona">
+                    <span class="dot"></span>
+                </div>
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                </div>
+                <div class="side six">
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <div class="kolona">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                </div>
+            </div>
+            <button id="spin">Spin random!!!</button>
+        </div>
+    </div>
+    <div class="popup-info-wrapper hide-btn">
+        <div class="popup-info-body">
+            <div class="info-message">
+                <h3>Bienvenido al juego de ‘Serpientes y escaleras’</h3>
+                
+            </div>
+            <div class="congrats-message hide-btn">
+                <h3>¡Felicitaciones!</h3>
+                <br>
+                <br>
+            
+            </div>
+        </div>
+        <button class="btn-close">
+            <span class="ic--round-close"></span>
+        </button>
     </div>
     <script type="text/javascript" src="./app/web/js/main.js"></script>
+    <script type="text/javascript" src="./app/web/js/dice.js"></script>
 </body>
 </html>

@@ -4,6 +4,7 @@ class Game {
         this.coloresPastel = coloresPastel;
         this.board = this.createBoard();
         this.players = [];
+        this.currentPlayerIndex = 0;
     }
 
     // Método para crear un tablero dados i filas y j columnas
@@ -48,14 +49,73 @@ class Game {
         this.players.push(player);
     }
 
-    startGame() {
-        // Aquí puedes agregar la lógica para iniciar el juego
+    // Pasar al siguiente jugador
+    nextTurn() {
+        // Avanza al siguiente jugador
+        this.currentPlayerIndex++;
+        // Si hemos llegado al final de la lista de jugadores, volvemos al principio
+        if (this.currentPlayerIndex >= this.players.length) {
+            this.currentPlayerIndex = 0;
+        }
+    }
+
+    // Obtener el jugador actual
+    getCurrentPlayer() {
+        return this.players[this.currentPlayerIndex];
+    }
+
+    diceRoll() {
+
+    }
+}
+
+class Player {
+    constructor(name, color) {
+        this.name = name;
+        this.color = color;
+        this.currentSquare = 1;
+        this.hasWon = false;
+    }
+
+    // Método para avanzar en el tablero
+    advance(steps) {
+        this.currentSquare += steps;
+    }
+
+    // Método para retroceder en el tablero
+    goBack(steps) {
+        this.currentSquare -= steps;
+    }
+
+    // Método para verificar si el jugador ha ganado la partida
+    checkWin() {
+        if (this.currentSquare >= 30) {
+            this.hasWon = true;
+        }
+    }
+
+    // Método para obtener la posición actual del jugador
+    getCurrentPosition() {
+        return this.currentSquare;
+    }
+
+    // Método para obtener el estado de victoria del jugador
+    getWinStatus() {
+        return this.hasWon;
     }
 }
 
 addEventListener("DOMContentLoaded", (event) => {
     // Declaración de variables
     const gameBoard = document.querySelector('.game-board');
+    const infoButton = document.querySelector('.info-videogame');
+    const infoWrapper = document.querySelector('.popup-info-wrapper');
+    const closeInfoBtn = document.querySelector('.btn-close');
+    const playerTurnLabel = document.querySelector('.player-turn');
+
+    const numberOfPlayers = 5;
+    let isInGame = false;
+
     let coloresPastel = [
         "#FF7F50", // Salmón más oscuro
         "#FF69B4", // Rosa más oscuro
@@ -68,8 +128,72 @@ addEventListener("DOMContentLoaded", (event) => {
     // Crear una nueva instancia del juego
     let game = new Game(gameBoard, coloresPastel);
 
+    // Iniciar el juego
+    startGame();
+
+    // Manage info button click
+    infoButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        infoWrapper.classList.remove('hide-btn');
+        // btnPressedAudio.play();
+    });
+
+    closeInfoBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        infoWrapper.classList.add('hide-btn');
+        // btnPressedAudio.play();
+        // if(!isMusicActive) {
+        //     videoGameMusic.play();
+        //     videoGameMusic.volume = 0.2;
+        //     isMusicActive = true;
+        // }
+    });
+
+    // rollDiceBtn.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     let result = 
+    //     game.diceRoll(result);
+    // });
+
+    async function startGame() {
+        isInGame = true;
+        let playerTest = new Player('Santi', 'yellow');
+        game.addPlayer(playerTest);
+    
+        // Mientras estemos en el juego
+        // Configura un intervalo para manejar los turnos
+        let gameInterval = setInterval(() => {
+            // Obtén el jugador actual
+            let currentPlayer = game.getCurrentPlayer();
+
+            // Lanza el dado (genera un número aleatorio entre 1 y 6)
+            let diceRoll = Math.floor(Math.random() * 6) + 1;
+            console.log(diceRoll);
+            // Avanza al jugador en el tablero según el resultado del dado
+            currentPlayer.advance(diceRoll);
+
+            // Verifica si el jugador ha ganado
+            currentPlayer.checkWin();
+
+            // Si el jugador ha ganado, termina el juego
+            if (currentPlayer.getWinStatus()) {
+                isInGame = false;
+                console.log(currentPlayer.name + " ha ganado el juego!");
+                clearInterval(gameInterval); // Detiene el intervalo
+            }
+
+            // Avanza al siguiente turno
+            game.nextTurn();
+        }, 1000); // Ejecuta el código cada 1000 milisegundos (1 segundo)
+    }    
+
     // Agregar jugadores
 
-    // Iniciar el juego
-    game.startGame();
+    
+    function congratulations(ratio, opt) {
+        confetti(Object.assign({}, opt, {
+            origin: {y: .6},
+            particleCount: Math.floor(200 * ratio)
+        }));
+    }
 });
