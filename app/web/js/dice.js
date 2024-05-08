@@ -1,7 +1,7 @@
 let rnd;
 let x, y;
 
-document.querySelector("#spin").addEventListener("click", function(e) {
+document.querySelector("#rollDiceBtn").addEventListener("click", function(e) {
     e.preventDefault();
     rnd = Math.floor(Math.random() * 6 + 1);
     switch (rnd) {

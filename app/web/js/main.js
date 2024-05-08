@@ -67,6 +67,26 @@ class Game {
     diceRoll() {
 
     }
+
+    // Método para jugar un turno
+    playTurn(diceRoll) {
+        // Obtén el jugador actual
+        let currentPlayer = this.getCurrentPlayer();
+
+        // Avanza al jugador en el tablero según el resultado del dado
+        currentPlayer.advance(diceRoll);
+
+        // Verifica si el jugador ha ganado
+        currentPlayer.checkWin();
+
+        // Si el jugador ha ganado, termina el juego
+        if (currentPlayer.getWinStatus()) {
+            console.log(currentPlayer.name + " ha ganado el juego!");
+            return true; // Indica que el juego ha terminado
+        }
+
+        return false; // Indica que el juego no ha terminado
+    }
 }
 
 class Player {
@@ -112,6 +132,8 @@ addEventListener("DOMContentLoaded", (event) => {
     const infoWrapper = document.querySelector('.popup-info-wrapper');
     const closeInfoBtn = document.querySelector('.btn-close');
     const playerTurnLabel = document.querySelector('.player-turn');
+    const rollDiceBtn = document.querySelector('#rollDiceBtn');
+    const nextTurnBtn = document.querySelector('#nextTurnBtn');
 
     const numberOfPlayers = 5;
     let isInGame = false;
@@ -149,43 +171,31 @@ addEventListener("DOMContentLoaded", (event) => {
         // }
     });
 
-    // rollDiceBtn.addEventListener('click', (e) => {
-    //     e.preventDefault();
-    //     let result = 
-    //     game.diceRoll(result);
-    // });
+    rollDiceBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Lanza el dado (genera un número aleatorio entre 1 y 6)
+        let diceRoll = Math.floor(Math.random() * 6) + 1;
+        console.log(diceRoll);
+        // Juega el turno y verifica si el juego ha terminado
+        if (game.playTurn(diceRoll)) {
+            isInGame = false;
+        }
+    });
+
+    nextTurnBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        // Avanza al siguiente turno
+        game.nextTurn();
+    });
 
     async function startGame() {
         isInGame = true;
         let playerTest = new Player('Santi', 'yellow');
+        let playerTest2 = new Player('Liz', 'blue');
         game.addPlayer(playerTest);
+        game.addPlayer(playerTest2);
+    }
     
-        // Mientras estemos en el juego
-        // Configura un intervalo para manejar los turnos
-        let gameInterval = setInterval(() => {
-            // Obtén el jugador actual
-            let currentPlayer = game.getCurrentPlayer();
-
-            // Lanza el dado (genera un número aleatorio entre 1 y 6)
-            let diceRoll = Math.floor(Math.random() * 6) + 1;
-            console.log(diceRoll);
-            // Avanza al jugador en el tablero según el resultado del dado
-            currentPlayer.advance(diceRoll);
-
-            // Verifica si el jugador ha ganado
-            currentPlayer.checkWin();
-
-            // Si el jugador ha ganado, termina el juego
-            if (currentPlayer.getWinStatus()) {
-                isInGame = false;
-                console.log(currentPlayer.name + " ha ganado el juego!");
-                clearInterval(gameInterval); // Detiene el intervalo
-            }
-
-            // Avanza al siguiente turno
-            game.nextTurn();
-        }, 1000); // Ejecuta el código cada 1000 milisegundos (1 segundo)
-    }    
 
     // Agregar jugadores
 
