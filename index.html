@@ -1,107 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snakes and Ladders</title>
-    <link rel="stylesheet" type="text/css" href="./app/web/css/styles.css">
-    <link rel="stylesheet" type="text/css" href="./app/web/css/icons.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./app/web/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./app/web/css/icons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Francois+One&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  </head>
+  <body>
+    <!-- JUGADORES : Ser arrastrado por el Mouse -->
+    <div class="container">
+      <div class="P1"><div class="circle red" id="circle1">P1</div></div>
+      <div class="P2"><div class="circle blue" id="circle2">P2</div></div>
+      <div class="P3"><div class="circle green" id="circle3">P3</div></div>
+      <div class="P4"><div class="circle yellow" id="circle4">P4</div></div>
+      <div class="P5"><div class="circle purple" id="circle4">P5</div></div>
+      <div class="P6"><div class="circle brown" id="circle4">P6</div></div>
+    </div>
 
-</head>
-<body>
+    <!-- Boton de Informacion -->
     <button class="info-videogame">
-        <span class="material-symbols--info-outline"></span>
+      <span class="material-symbols--info-outline"></span>
     </button>
+
     <div class="game-container">
-        <div class="game-container-wrapper">
-            <div class="game-board">
+      <!-- Mensaje para avanzar o retroceder casillas depsues de dar clic en una S o E  -->
+      <div class="notification-container" id="notification-container"></div>
+
+      <!--  Cuadros y clic para pregunatas (Prueba) -->
+      <div class="container-Preguntas">
+        <button class="trigger-btn" id="triggerBtn">Prueba de Pregunta</button>
+        <div class="question-modal" id="questionModal">
+          <div class="question-content">
+            <div class="question-text" id="questionText">
+              ¿Cuál es la capital de Francia?
             </div>
+            <button class="answer-btn" id="correctBtn">Correcto</button>
+            <button class="answer-btn" id="incorrectBtn">Incorrecto</button>
+          </div>
         </div>
+        <div class="response-modal" id="responseModal">
+          <div class="response-content" id="responseContent"></div>
+          <button class="close-btn" id="closeBtn">Cerrar</button>
+        </div>
+      </div>
+
+      <!-- Tablero -->
+      <div class="game-container-wrapper">
+        <div class="game-board"></div>
+      </div>
     </div>
+
+    <!-- Cuadro de turnos / dado y jugadores -->
     <div class="player-turn-container">
-        <div class="player-turn-container-wrapper">
-            <span class="player-turn"></span>
-            <button id="nextTurnBtn">Pasar turno</button>
+      <div class="player-turn-container-wrapper">
+        <div class="mensaje-Turno" id="mensajeTurn">
+          Tira el Dado para Comenzar
         </div>
-    </div>
-    <div class="dice-container">
-        <div class="panel">
+        <span class="player-turn" id="playerTurn"></span>
+
+        <div class="dice-container">
+          <div class="panel">
             <div class="dice">
-                <div class="side one">
+              <div class="side one">
                 <span class="dot"></span>
-                </div>
-                <div class="side two">
-                <span class="dot"></span>
-                <span class="dot"></span>
-                </div>
-                <div class="side three">
+              </div>
+              <div class="side two">
                 <span class="dot"></span>
                 <span class="dot"></span>
+              </div>
+              <div class="side three">
                 <span class="dot"></span>
-                </div>
-                <div class="side four">
+                <span class="dot"></span>
+                <span class="dot"></span>
+              </div>
+              <div class="side four">
                 <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                </div>
-                <div class="side five">
-                <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
                 </div>
                 <div class="kolona">
-                    <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+              </div>
+              <div class="side five">
+                <div class="kolona">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
                 </div>
                 <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
-                </div>
-                </div>
-                <div class="side six">
-                <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                  <span class="dot"></span>
                 </div>
                 <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
+                </div>
+              </div>
+              <div class="side six">
+                <div class="kolona">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
                 </div>
                 <div class="kolona">
-                    <span class="dot"></span>
-                    <span class="dot"></span>
+                  <span class="dot"></span>
+                  <span class="dot"></span>
                 </div>
+                <div class="kolona">
+                  <span class="dot"></span>
+                  <span class="dot"></span>
                 </div>
+              </div>
             </div>
-            <button id="rollDiceBtn">Spin random!!!</button>
+            <button id="rollDiceBtn">¡¡¡Spin Random!!!</button>
+          </div>
         </div>
+      </div>
     </div>
+
+    <!-- Cuadro / Boton de Información -->
     <div class="popup-info-wrapper hide-btn">
-        <div class="popup-info-body">
-            <div class="info-message">
-                <h3>Bienvenido al juego de ‘Serpientes y escaleras’</h3>
-                
-            </div>
-            <div class="congrats-message hide-btn">
-                <h3>¡Felicitaciones!</h3>
-                <br>
-                <br>
-            
-            </div>
+      <div class="popup-info-body">
+        <div class="info-message">
+          <h3>
+            Bienvenido al juego de ‘Serpientes y escaleras’ <br /><br /><u
+              >INDICACIONES DEL JUEGO:</u
+            >
+          </h3>
+          <p>
+            <br />
+            1. Cada jugador tendrá una ficha que podrá arrastrar a la casilla
+            que le haya tocado después de tirar con el dado virtual. <br />
+            2. Cada vez que caigan en una casilla, tienen que dar clic encima de
+            ella y aparecerá una pregunta al azar. <br />
+            3. Las escaleras son para subir a y las serpientes para bajar
+            <i
+              >(Cuando caigan en la casilla que tiene la imagen de una escalera
+              dar clic encima de ella y les indicara qué hacer, ocurrirá lo
+              mismo para las casillas que tenga la imagen de una serpiente).</i
+            >
+          </p>
         </div>
-        <button class="btn-close">
-            <span class="ic--round-close"></span>
-        </button>
+        <div class="congrats-message hide-btn">
+          <h3>¡Felicitaciones!</h3>
+          <br />
+          <br />
+        </div>
+      </div>
+      <button class="btn-close">
+        <span class="ic--round-close"></span>
+      </button>
     </div>
+
     <script type="text/javascript" src="./app/web/js/main.js"></script>
     <script type="text/javascript" src="./app/web/js/dice.js"></script>
-</body>
+  </body>
 </html>
