@@ -41,7 +41,7 @@ class Game {
         //CASILLAS DE ESCALERAS--------------------------------------
         // Agregar imagen de escaleras en las casillas 6
         if (parseInt(square.dataset.number) === 6) {
-          square.style.backgroundImage = "url('ladder.webp')";
+          square.style.backgroundImage = "url('assets/ladder.webp')";
           square.style.backgroundSize = "cover";
           // Para dar clic en las casilla.
           square.addEventListener("click", () => {
@@ -52,7 +52,7 @@ class Game {
         }
         // Agregar imagen de escaleras en las casillas 12
         if (parseInt(square.dataset.number) === 12) {
-          square.style.backgroundImage = "url('ladder.webp')";
+          square.style.backgroundImage = "url('assets/ladder.webp')";
           square.style.backgroundSize = "cover";
           // Para dar clic en las casilla.
           square.addEventListener("click", () => {
@@ -63,7 +63,7 @@ class Game {
         }
         // Agregar imagen de escaleras en las casillas 15
         if (parseInt(square.dataset.number) === 15) {
-          square.style.backgroundImage = "url('ladder.webp')";
+          square.style.backgroundImage = "url('assets/ladder.webp')";
           square.style.backgroundSize = "cover";
           // Para dar clic en las casilla.
           square.addEventListener("click", () => {
@@ -75,7 +75,7 @@ class Game {
         //CASILLAS DE SERPIENTES--------------------------------------
         // Agregar imagen de serpiente en las casillas 11
         if (parseInt(square.dataset.number) === 11) {
-          square.style.backgroundImage = "url('snake.png')";
+          square.style.backgroundImage = "url('assets/snake.png')";
           square.style.backgroundSize = "cover";
           // Para dar clic en las casilla.
           square.addEventListener("click", () => {
@@ -86,7 +86,7 @@ class Game {
         }
         // Agregar imagen de serpiente en las casillas 21
         if (parseInt(square.dataset.number) === 21) {
-          square.style.backgroundImage = "url('snake.png')";
+          square.style.backgroundImage = "url('assets/snake.png')";
           square.style.backgroundSize = "cover";
           // Para dar clic en las casilla.
           square.addEventListener("click", () => {
@@ -97,7 +97,7 @@ class Game {
         }
         // Agregar imagen de serpiente en las casillas 28
         if (parseInt(square.dataset.number) === 28) {
-          square.style.backgroundImage = "url('snake.png')";
+          square.style.backgroundImage = "url('assets/snake.png')";
           square.style.backgroundSize = "cover";
           // Para dar clic en las casilla.
           square.addEventListener("click", () => {
