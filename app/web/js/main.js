@@ -13,130 +13,137 @@ class Game {
     let x = 30;
     let scount = 30;
     let scountTmp = 0;
+    let snakeImg = './assets/snake.png';
+    let ladderImg = './assets/ladder.webp';
 
     for (let i = 0; i < 5; i++) {
-      let row = [];
-
-      if (i % 2 === 0) {
-        scountTmp = 24 - 6 * i + 1;
-      } else {
-        scountTmp = x;
-      }
-      for (let j = 0; j < 6; j++) {
-        let square = document.createElement("div");
-        square.classList.add("board-square");
-        square.style.backgroundColor =
-          this.coloresPastel[
-            Math.floor(Math.random() * this.coloresPastel.length)
-          ];
-        // Si la fila es par, numerar las casillas de izquierda a derecha
-        // Si la fila es impar, numerar las casillas de derecha a izquierda
+        let row = [];
+        
         if (i % 2 === 0) {
-          square.dataset.number = scountTmp++;
+            scountTmp = 24 - 6 * i + 1;
         } else {
-          square.dataset.number = scountTmp--;
+            scountTmp = x;
         }
+        for (let j = 0; j < 6; j++) {
+             
+            let square = document.createElement('div');
+            square.classList.add('board-square');
+            square.style.backgroundColor = this.coloresPastel[Math.floor(Math.random() * this.coloresPastel.length)];
+            // Si la fila es par, numerar las casillas de izquierda a derecha
+            // Si la fila es impar, numerar las casillas de derecha a izquierda
+            if (i % 2 === 0) {
+                square.dataset.number = scountTmp++;
 
-        /// NUEVO FRAGMENTO DE CODIGO
-        //CASILLAS DE ESCALERAS--------------------------------------
-        // Agregar imagen de escaleras en las casillas 6
-        if (parseInt(square.dataset.number) === 6) {
-          square.style.backgroundImage = "url('assets/ladder.webp')";
-          square.style.backgroundSize = "cover";
-          // Para dar clic en las casilla.
-          square.addEventListener("click", () => {
-            this.showNotification(
-              "...Casilla 6 - Escalera...\n Avanza a la casilla 18"
-            );
-          });
-        }
-        // Agregar imagen de escaleras en las casillas 12
-        if (parseInt(square.dataset.number) === 12) {
-          square.style.backgroundImage = "url('assets/ladder.webp')";
-          square.style.backgroundSize = "cover";
-          // Para dar clic en las casilla.
-          square.addEventListener("click", () => {
-            this.showNotification(
-              "...Casilla 12 - Escalera...\n Avanza a la casilla 24"
-            );
-          });
-        }
-        // Agregar imagen de escaleras en las casillas 15
-        if (parseInt(square.dataset.number) === 15) {
-          square.style.backgroundImage = "url('assets/ladder.webp')";
-          square.style.backgroundSize = "cover";
-          // Para dar clic en las casilla.
-          square.addEventListener("click", () => {
-            this.showNotification(
-              "...Casilla 15 - Escalera...\n Avanza a la casilla 27"
-            );
-          });
-        }
-        //CASILLAS DE SERPIENTES--------------------------------------
-        // Agregar imagen de serpiente en las casillas 11
-        if (parseInt(square.dataset.number) === 11) {
-          square.style.backgroundImage = "url('assets/snake.png')";
-          square.style.backgroundSize = "cover";
-          // Para dar clic en las casilla.
-          square.addEventListener("click", () => {
-            this.showNotification(
-              "...Casilla 11 - Serpiente...\n Retrocede a la casilla 3"
-            );
-          });
-        }
-        // Agregar imagen de serpiente en las casillas 21
-        if (parseInt(square.dataset.number) === 21) {
-          square.style.backgroundImage = "url('assets/snake.png')";
-          square.style.backgroundSize = "cover";
-          // Para dar clic en las casilla.
-          square.addEventListener("click", () => {
-            this.showNotification(
-              "...Casilla 21 - Serpiente...\n Retrocede a la casilla 17"
-            );
-          });
-        }
-        // Agregar imagen de serpiente en las casillas 28
-        if (parseInt(square.dataset.number) === 28) {
-          square.style.backgroundImage = "url('assets/snake.png')";
-          square.style.backgroundSize = "cover";
-          // Para dar clic en las casilla.
-          square.addEventListener("click", () => {
-            this.showNotification(
-              "...Casilla 28 - Serpiente...\n Retrocede a la casilla 20"
-            );
-          });
-        }
-        /// FIN NUEVO FRAGMENTO DE CODIGO
+            } else {
+                square.dataset.number = scountTmp--;
+            }
+            
+            /// NUEVO FRAGMENTO DE CODIGO
+            //CASILLAS DE ESCALERAS--------------------------------------
+            // Agregar imagen de escaleras en las casillas 6
+            if (parseInt(square.dataset.number) === 6) {
+                square.style.backgroundImage = "url(" + ladderImg + ")";
+                square.style.backgroundSize = "cover";
+                // Para dar clic en las casilla.
+                square.addEventListener('click', () => {
+                    this.showNotification("...Casilla 6 - Escalera...\n Avanza a la casilla 18");
+                });
+            }
+            // Agregar imagen de escaleras en las casillas 12
+            if (parseInt(square.dataset.number) === 12) {
+                square.style.backgroundImage = "url(" + ladderImg + ")";
+                square.style.backgroundSize = "cover";
+                // Para dar clic en las casilla.
+                square.addEventListener('click', () => {
+                    this.showNotification("...Casilla 12 - Escalera...\n Avanza a la casilla 24");
+                });
+            }
+            // Agregar imagen de escaleras en las casillas 15
+            if (parseInt(square.dataset.number) === 15) {
+                square.style.backgroundImage = "url(" + ladderImg + ")";
+                square.style.backgroundSize = "cover";
+                // Para dar clic en las casilla.
+                square.addEventListener('click', () => {
+                    this.showNotification("...Casilla 15 - Escalera...\n Avanza a la casilla 27");
+                });
+            }
+            //CASILLAS DE SERPIENTES--------------------------------------
+            // Agregar imagen de serpiente en las casillas 11
+            if (parseInt(square.dataset.number) === 11) {
+                square.style.backgroundImage = "url(" + snakeImg + ")";
+                square.style.backgroundSize = "cover";
+                // Para dar clic en las casilla.
+                square.addEventListener('click', () => {
+                    this.showNotification("...Casilla 11 - Serpiente...\n Retrocede a la casilla 30", 'https://youtu.be/jHWBFyZcLPg?si=b6Y-WcAzzeR23Uos');
+                });
+            }
+            // Agregar imagen de serpiente en las casillas 21
+            if (parseInt(square.dataset.number) === 21) {
+                square.style.backgroundImage = "url(" + snakeImg + ")";
+                square.style.backgroundSize = "cover";
+                // Para dar clic en las casilla.
+                square.addEventListener('click', () => {
+                    this.showNotification("...Casilla 21 - Serpiente...\n Retrocede a la casilla 17", 'https://youtu.be/jHWBFyZcLPg?si=b6Y-WcAzzeR23Uos');
+                });
+            }
+            // Agregar imagen de serpiente en las casillas 28
+            if (parseInt(square.dataset.number) === 28) {
+                square.style.backgroundImage = "url(" + snakeImg + ")";
+                square.style.backgroundSize = "cover";
+                // Para dar clic en las casilla.
+                square.addEventListener('click', () => {
+                    this.showNotification("...Casilla 28 - Serpiente...\n Retrocede a la casilla 20", 'https://youtu.be/jHWBFyZcLPg?si=b6Y-WcAzzeR23Uos');
+                });
+            }
+            /// FIN NUEVO FRAGMENTO DE CODIGO
 
-        this.gameBoard.appendChild(square);
-        row.push(square);
-        x--;
-      }
-      scount = scountTmp;
-      board.push(row);
+            this.gameBoard.appendChild(square);
+            row.push(square);
+            x--;
+        }
+        scount = scountTmp;
+        board.push(row);
     }
     return board;
   }
 
   // NOTIFICAR A QUE CASILLA DEBE MOVERSE EL JUGADOR (IMG SERPIENTE Y ESCALERA).
-  showNotification(message) {
+  showNotification(message, videoPath) {
     // Crear un nuevo cuadro de notificación
-    let notification = document.createElement("div");
-    notification.classList.add("notification");
+    let notification = document.createElement('div');
+    notification.classList.add('notification');
 
     // Crear el contenido del cuadro de notificación (texto y botón de cierre)
-    let notificationContent = document.createElement("div");
-    notificationContent.classList.add("notification-content");
+    let notificationContent = document.createElement('div');
+    notificationContent.classList.add('notification-content');
     notificationContent.textContent = message;
 
+    // INICIO - RANA MEME
+    // Verificar si se proporcionó un videoPath
+    if (videoPath) {
+      // Crear el elemento iframe
+      let iframe = document.createElement('iframe');
+      iframe.width = "560";
+      iframe.height = "315";
+      iframe.src = 'https://www.youtube.com/embed/jHWBFyZcLPg?autoplay=1';
+      iframe.frameborder = "0";
+      iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+      iframe.allowFullscreen = true;
+  
+      // Agregar el iframe al contenido del cuadro de notificación
+      notificationContent.appendChild(iframe);
+    }
+  
+    // FIN - RANA MEME
+
     // Crear el botón de cierre
-    let closeButton = document.createElement("button");
-    closeButton.classList.add("close-button");
-    closeButton.textContent = "Cerrar";
+    let closeButton = document.createElement('button');
+    closeButton.classList.add('close-button');
+    closeButton.textContent = 'Cerrar';
 
     // Agregar evento de clic al botón de cierre para eliminar el cuadro de notificación
-    closeButton.addEventListener("click", () => {
-      notification.remove();
+    closeButton.addEventListener('click', () => {
+        notification.remove();
     });
 
     // Agregar el texto y el botón de cierre al contenido del cuadro de notificación
@@ -144,9 +151,7 @@ class Game {
     notification.appendChild(closeButton);
 
     // Agregar el cuadro de notificación al contenedor de notificaciones en tu HTML
-    let notificationContainer = document.getElementById(
-      "notification-container"
-    );
+    let notificationContainer = document.getElementById('notification-container');
     notificationContainer.appendChild(notification);
   }
 
@@ -228,6 +233,14 @@ addEventListener("DOMContentLoaded", (event) => {
   const rollDiceBtn = document.querySelector("#rollDiceBtn");
   const nextTurnBtn = document.querySelector("#nextTurnBtn");
 
+  let isMusicActive = false;
+
+  const btnPressedAudio = new Audio('./app/web/audio/btn-preesed.wav');
+  const correctQuestion = new Audio('./app/web/audio/word-guessed.wav');
+  const incorrectQuestion = new Audio('./app/web/audio/incorrect-letter.wav');
+  const roundLost = new Audio('./app/web/audio/round-lost.wav');
+  const videoGameMusic = new Audio('./app/web/audio/game-music.wav');
+
   const numberOfPlayers = 5;
   let isInGame = false;
 
@@ -246,6 +259,7 @@ addEventListener("DOMContentLoaded", (event) => {
   // Iniciar el juego
   startGame();
 
+
   // Manage info button click
   infoButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -256,6 +270,11 @@ addEventListener("DOMContentLoaded", (event) => {
   closeInfoBtn.addEventListener("click", (e) => {
     e.preventDefault();
     infoWrapper.classList.add("hide-btn");
+    if(!isMusicActive) {
+      videoGameMusic.play();
+      videoGameMusic.volume = 0.2;
+      isMusicActive = true;
+    }
     // btnPressedAudio.play();
     // if(!isMusicActive) {
     //     videoGameMusic.play();
@@ -266,6 +285,7 @@ addEventListener("DOMContentLoaded", (event) => {
 
   rollDiceBtn.addEventListener("click", (e) => {
     e.preventDefault();
+    btnPressedAudio.play();
     // Lanza el dado (genera un número aleatorio entre 1 y 6)
     let diceRoll = Math.floor(Math.random() * 6) + 1;
     console.log(diceRoll);
@@ -275,11 +295,11 @@ addEventListener("DOMContentLoaded", (event) => {
     }
   });
 
-  nextTurnBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-    // Avanza al siguiente turno
-    game.nextTurn();
-  });
+  // nextTurnBtn.addEventListener("click", (e) => {
+  //   e.preventDefault();
+  //   // Avanza al siguiente turno
+  //   game.nextTurn();
+  // });
 
   async function startGame() {
     isInGame = true;
@@ -301,34 +321,52 @@ addEventListener("DOMContentLoaded", (event) => {
   }
 });
 
+
 // JUGADORES : Ser arrastrado por el Mouse
 const circles = document.querySelectorAll(".circle");
 
 circles.forEach((circle) => {
-  circle.addEventListener("mousedown", startDragging);
+  dragElement(circle);
 });
 
-function startDragging(e) {
-  const circle = e.target;
-  const initialX = circle.getBoundingClientRect().left;
-  const initialY = circle.getBoundingClientRect().top;
-  const offsetX = e.clientX - initialX;
-  const offsetY = e.clientY - initialY;
-
-  document.addEventListener("mousemove", dragCircle);
-  document.addEventListener("mouseup", stopDragging);
-
-  function dragCircle(e) {
-    const x = e.clientX - offsetX;
-    const y = e.clientY - offsetY;
-
-    circle.style.left = `${x}px`;
-    circle.style.top = `${y}px`;
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "header")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
   }
 
-  function stopDragging() {
-    document.removeEventListener("mousemove", dragCircle);
-    document.removeEventListener("mouseup", stopDragging);
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
   }
 }
 
@@ -350,35 +388,35 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //  Cuadro de Pregunata Inicial
-document.addEventListener("DOMContentLoaded", function () {
-  const triggerBtn = document.getElementById("triggerBtn");
-  const questionModal = document.getElementById("questionModal");
-  const responseModal = document.getElementById("responseModal");
-  const responseContent = document.getElementById("responseContent");
-  const correctBtn = document.getElementById("correctBtn");
-  const incorrectBtn = document.getElementById("incorrectBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const questionText = document.getElementById("questionText");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const triggerBtn = document.getElementById("triggerBtn");
+//   const questionModal = document.getElementById("questionModal");
+//   const responseModal = document.getElementById("responseModal");
+//   const responseContent = document.getElementById("responseContent");
+//   const correctBtn = document.getElementById("correctBtn");
+//   const incorrectBtn = document.getElementById("incorrectBtn");
+//   const closeBtn = document.getElementById("closeBtn");
+//   const questionText = document.getElementById("questionText");
 
-  triggerBtn.addEventListener("click", function () {
-    questionModal.style.display = "block";
-  });
+//   triggerBtn.addEventListener("click", function () {
+//     questionModal.style.display = "block";
+//   });
 
-  correctBtn.addEventListener("click", function () {
-    responseContent.textContent =
-      "Respuesta Correcta - Te quedas en esta casilla.";
-    responseModal.style.display = "block";
-    questionModal.style.display = "none";
-  });
+//   correctBtn.addEventListener("click", function () {
+//     responseContent.textContent =
+//       "Respuesta Correcta - Te quedas en esta casilla.";
+//     responseModal.style.display = "block";
+//     questionModal.style.display = "none";
+//   });
 
-  incorrectBtn.addEventListener("click", function () {
-    responseContent.textContent =
-      "Respuesta Incorrecta - Retrocedes una casilla.";
-    responseModal.style.display = "block";
-    questionModal.style.display = "none";
-  });
+//   incorrectBtn.addEventListener("click", function () {
+//     responseContent.textContent =
+//       "Respuesta Incorrecta - Retrocedes una casilla.";
+//     responseModal.style.display = "block";
+//     questionModal.style.display = "none";
+//   });
 
-  closeBtn.addEventListener("click", function () {
-    responseModal.style.display = "none";
-  });
-});
+//   closeBtn.addEventListener("click", function () {
+//     responseModal.style.display = "none";
+//   });
+// });

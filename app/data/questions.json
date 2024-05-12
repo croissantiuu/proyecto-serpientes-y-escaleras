@@ -1,0 +1,274 @@
+{
+    "Preguntas": [
+        {
+            "pregunta": "Las funciones principales de la administración son:",
+            "grupo_de_respuestas": [
+                {"a": "Planear, controlar, dirigir, organizar"},
+                {"b": "Planear, controlar, digerir, organizar"},
+                {"c": "Planificar, Controlar, Organizar, Construir"}
+            ],
+            "respuesta": "Planear, controlar, dirigir, organizar"
+        },
+        {
+            "pregunta": "¿Cuáles son los sombreros de bono y cual es el significado de cada color?",
+            "grupo_de_respuestas": [
+                {"a": "verde, azul, blanco, rojo, café, amarillo"},
+                {"b": "Blanco, rojo, negro, amarillo, verde, azul"},
+                {"c": "Morado, blanco, rojo, gris, verde, azul"}
+            ],
+            "respuesta": "Blanco, rojo, negro, amarillo, verde, azul"
+        },
+        {
+            "pregunta": "Cuáles son las 3 dimensiones indispensables para considerar una información de calidad?",
+            "grupo_de_respuestas": [
+                {"a": "Tiempo, contenido y forma"},
+                {"b": "Tiempo, contenido y color"},
+                {"c": "Tiempo, contenido y tamaño"}
+            ],
+            "respuesta": "Tiempo, contenido y forma"
+        },
+        {
+            "pregunta": "Menciona 3 clasificaciones de los sistemas de apoyo",
+            "grupo_de_respuestas": [
+                {"a": "DSS, GDSS, EIS, EDSS"},
+                {"b": "DSS, GDDS, EIS, EDSS"},
+                {"c": "DDS, GDSS, EIS, EDSS"}
+            ],
+            "respuesta": "DSS, GDSS, EIS, EDSS"
+        },
+        {
+            "pregunta": "El par trenzado tiene una capacidad de transmisión baja, media o alta?",
+            "grupo_de_respuestas": [
+                {"a": "Alta"},
+                {"b": "Media"},
+                {"c": "Baja"}
+            ],
+            "respuesta": "Baja"
+        },
+        {
+            "pregunta": "Medio de transmisión de alto costo con alta capacidad de transmisión?",
+            "grupo_de_respuestas": [
+                {"a": "Cable coaxial"},
+                {"b": "Fibra óptica"},
+                {"c": "Par trenzado"}
+            ],
+            "respuesta": "Fibra óptica"
+        },
+        {
+            "pregunta": "Transmite de forma lenta la información y es conocido como star-stop.",
+            "grupo_de_respuestas": [
+                {"a": "Asíncrono"},
+                {"b": "Síncrono"},
+                {"c": "Isochrónico"}
+            ],
+            "respuesta": "Asíncrono"
+        },
+        {
+            "pregunta": "2 características del comercio electrónico",
+            "grupo_de_respuestas": [
+                {"a": "Intercambio de información digitalizada entre dos partes, Se convierte a un espacio “virtual”."},
+                {"b": "Intercambio de información física entre dos partes, Se convierte a un espacio “virtual”."},
+                {"c": "Intercambio de información digitalizada entre dos partes, Se convierte a un espacio “físico”."}
+            ],
+            "respuesta": "Intercambio de información digitalizada entre dos partes, Se convierte a un espacio “virtual”."
+        },
+        {
+            "pregunta": "Estrategias de negocios: Estrategias genéricas de poter",
+            "grupo_de_respuestas": [
+                {"a": "Liderazgo en ventas, diferenciación, enfoque en costos, enfoque en producción"},
+                {"b": "Liderazgo en costo, diferenciación, enfoque en ventas, enfoque en producción"},
+                {"c": "Liderazgo en costo, diferenciación, enfoque en costos, enfoque en diferenciación"}
+            ],
+            "respuesta": "Liderazgo en costo, diferenciación, enfoque en costos, enfoque en diferenciación"
+        },
+        {
+            "pregunta": "Estrategias de negocios: Diferenciación",
+            "grupo_de_respuestas": [
+                {"a": "Desarrollar nuevas tecnologías para hacer el producto o el servicio más barato."},
+                {"b": "Desarrollar nuevas tecnologías para diferenciar el producto o el servicio."},
+                {"c": "Desarrollar nuevas tecnologías para hacer el producto o el servicio más rápido."}
+            ],
+            "respuesta": "Desarrollar nuevas tecnologías para diferenciar el producto o el servicio."
+        },
+        {
+            "pregunta": "Estrategias de negocios: Liderazgo en costo",
+            "grupo_de_respuestas": [
+                {"a": "El uso de las TI reduce sustancialmente el costo de los procesos de negocio."},
+                {"b": "El uso de las TI aumenta sustancialmente el costo de los procesos de negocio."},
+                {"c": "El uso de las TI no afecta el costo de los procesos de negocio."}
+            ],
+            "respuesta": "El uso de las TI reduce sustancialmente el costo de los procesos de negocio."
+        },
+        {
+            "pregunta": "Es el papel que desarrolla un competidor potencial",
+            "grupo_de_respuestas": [
+                {"a": "Se presenta porque uno o más de los competidores siente la presión o ve la oportunidad de mejorar su posición."},
+                {"b": "Se presenta porque uno o más de los competidores siente la presión o ve la oportunidad de disminuir su posición."},
+                {"c": "Se presenta porque uno o más de los competidores siente la presión o ve la oportunidad de mantener su posición."}
+            ],
+            "respuesta": "Se presenta porque uno o más de los competidores siente la presión o ve la oportunidad de mejorar su posición."
+        },
+        {
+            "pregunta": "La cadena de valor de porter…",
+            "grupo_de_respuestas": [
+                {"a": "Consiste en identificar y analizar las actividades que de forma indirecta crean un cambio positivo en el producto o servicio de una empresa."},
+                {"b": "Consiste en identificar y analizar las actividades que de forma directa crean un cambio negativo en el producto o servicio de una empresa."},
+                {"c": "Consiste en identificar y analizar las actividades que de forma directa crean un cambio positivo en el producto o servicio de una empresa."}
+            ],
+            "respuesta": "Consiste en identificar y analizar las actividades que de forma directa crean un cambio positivo en el producto o servicio de una empresa."
+        },
+        {
+            "pregunta": "Una característica de la inteligencia artificial es…",
+            "grupo_de_respuestas": [
+                {"a": "El autoconsumo"},
+                {"b": "La autodestrucción"},
+                {"c": "El autoaprendizaje"}
+            ],
+            "respuesta": "El autoaprendizaje"
+        },
+        {
+            "pregunta": "Son algunas características de Big data",
+            "grupo_de_respuestas": [
+                {"a": "Maneja grandes volúmenes de información, Actualiza la información a gran velocidad, Ayuda a detectar a clientes potenciales"},
+                {"b": "Maneja pequeños volúmenes de información, Actualiza la información a gran velocidad, Ayuda a detectar a clientes potenciales"},
+                {"c": "Maneja grandes volúmenes de información, Actualiza la información a baja velocidad, Ayuda a detectar a clientes potenciales"}
+            ],
+            "respuesta": "Maneja grandes volúmenes de información, Actualiza la información a gran velocidad, Ayuda a detectar a clientes potenciales"
+        },
+        {
+            "pregunta": "Se puede utilizar para entrenamiento militar, entrenamiento, campo de medicina y educación",
+            "grupo_de_respuestas": [
+                {"a": "Realidad virtual"},
+                {"b": "Realidad aumentada"},
+                {"c": "Realidad mixta"}
+            ],
+            "respuesta": "Realidad virtual"
+        },
+        {
+            "pregunta": "Mi apellido se escribe",
+            "grupo_de_respuestas": [
+                {"a": "d’hyver de las Deses"},
+                {"b": "d’hyver de las Desas"},
+                {"c": "d’hyver de las Doses"}
+            ],
+            "respuesta": "d’hyver de las Deses"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre real de Darth Vader?",
+            "grupo_de_respuestas": [
+                {"a": "Luke Skywalker"},
+                {"b": "Kaylo Ren"},
+                {"c": "Anakin Skywalker"}
+            ],
+            "respuesta": "Anakin Skywalker"
+        },
+        {
+            "pregunta": "¿Cuál es el grupo musical favorito de la maestra?",
+            "grupo_de_respuestas": [
+                {"a": "Jugar Frío"},
+                {"b": "Dragones Imaginarios"},
+                {"c": "Parque de enlace"}
+            ],
+            "respuesta": "Dragones Imaginarios"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre del último álbum de Taylor Swift?",
+            "grupo_de_respuestas": [
+                {"a": "Evermore"},
+                {"b": "Folklore"},
+                {"c": "Lover"}
+            ],
+            "respuesta": "Evermore"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre del personaje principal en el videojuego 'The Legend of Zelda'?",
+            "grupo_de_respuestas": [
+                {"a": "Link"},
+                {"b": "Zelda"},
+                {"c": "Ganon"}
+            ],
+            "respuesta": "Link"
+        },
+        {
+            "pregunta": "¿Cuál es el verdadero nombre de Baby Yoda?",
+            "grupo_de_respuestas": [
+                {"a": "Grogu"},
+                {"b": "Lando"},
+                {"c": "Jan"}
+            ],
+            "respuesta": "Grogu"
+        },
+        {
+            "pregunta": "¿Quién mató a Han Solo?",
+            "grupo_de_respuestas": [
+                {"a": "Kylo Ren"},
+                {"b": "Palpatine"},
+                {"c": "Darth Vader"}
+            ],
+            "respuesta": "Kylo Ren"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre del cantante principal de la banda 'Queen'?",
+            "grupo_de_respuestas": [
+                {"a": "Freddie Mercury"},
+                {"b": "Brian May"},
+                {"c": "Roger Taylor"}
+            ],
+            "respuesta": "Freddie Mercury"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre del personaje principal en el videojuego 'Halo'?",
+            "grupo_de_respuestas": [
+                {"a": "Lock"},
+                {"b": "Master Chef"},
+                {"c": "Jhon"}
+            ],
+            "respuesta": "Jhon"
+        },
+        {
+            "pregunta": "¿Cómo se llama la nave de Han Solo?",
+            "grupo_de_respuestas": [
+                {"a": "El halcón milenario"},
+                {"b": "El halcón peregrino"},
+                {"c": "X-Wing"}
+            ],
+            "respuesta": "El halcón milenario"
+        },
+        {
+            "pregunta": "¿Qué mano perdió Luke en su pelea con Darth Vader?",
+            "grupo_de_respuestas": [
+                {"a": "Derecha"},
+                {"b": "Izquierda"},
+                {"c": "Pie derecho"}
+            ],
+            "respuesta": "Derecha"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre del personaje principal en el videojuego 'Metroid'?",
+            "grupo_de_respuestas": [
+                {"a": "Mother Brain"},
+                {"b": "Ridley"},
+                {"c": "Samus Aran"}
+            ],
+            "respuesta": "Samus Aran"
+        },
+        {
+            "pregunta": "¿Quién es mejor en el Monster Verse'?",
+            "grupo_de_respuestas": [
+                {"a": "King Kong"},
+                {"b": "Godzilla"},
+                {"c": "Shimu"}
+            ],
+            "respuesta": "Godzilla"
+        },
+        {
+            "pregunta": "¿Cuál es el nombre real del protagonista de Dragon Ball?",
+            "grupo_de_respuestas": [
+                {"a": "Son Goku"},
+                {"b": "Kakaroto"},
+                {"c": "Son Gohan"}
+            ],
+            "respuesta": "Kakaroto"
+        }
+    ]
+}

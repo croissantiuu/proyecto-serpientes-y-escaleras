@@ -154,18 +154,55 @@
 
 /* Player turn container */
 
+.turn-buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+  align-items: center;
+}
+
+.turn-buttons-wrapper button {
+  padding: 20px;
+  border-radius: 10px;
+  width: 60%;
+  background-color: var(--azul);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  color: white;
+  border: white;
+  font-size: 1.3rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .player-turn-container {
   position: fixed;
-  top: 10%;
+  top: 20%;
   left: 10%;
   border: 15px solid var(--verde);
+  background: white;
   border-radius: 10px;
 }
 
+.players-container {
+  display: grid;
+  justify-content: center;
+  height: 200px;
+  grid-template-columns: 20% 20% 20%;
+  align-items: center;
+  margin-top: -200px;
+  margin-bottom: 40px;
+}
+
 .player-turn-container-wrapper {
-  width: 300px;
+  width: 370px;
   height: 575px;
   background: white;
+}
+
+.mensaje-Turno {
+  margin-top: 20px !important;
 }
 
 /* Dice container  - DADO*/
@@ -196,7 +233,8 @@
   background-color: white;
 }
 .side {
-  border: solid 4px white;
+  border: solid 6px white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
   position: absolute;
   background-color: var(--verde);
   width: 200px;
@@ -304,48 +342,38 @@
 }
 
 .circle {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.4);
   border-radius: 50%;
   position: absolute;
   cursor: grab;
+  border: 4px solid white;
   z-index: 9999; /*EJE Z --> para que esté por encima de otros elementos */
 }
 
 .red {
   background-color: red;
-  top: 490px; /* Posiciona el círculo rojo en la esquina superior izquierda */
-  left: 313px; /* Posiciona el círculo rojo en la esquina superior izquierda */
 }
 
 .blue {
   background-color: blue;
-  top: 550px; /* Ajusta la posición vertical del círculo azul */
-  left: 313px; /* Posiciona el círculo azul a la izquierda */
 }
 
 .green {
   background-color: green;
-  top: 490px; /* Posiciona el círculo verde en la esquina superior izquierda */
-  left: 377px; /* Ajusta la posición horizontal del círculo verde */
 }
 
 .yellow {
   background-color: yellow;
-  top: 550px; /* Ajusta la posición vertical del círculo amarillo */
-  left: 377px; /* Ajusta la posición horizontal del círculo amarillo */
 }
 
 .purple {
   background-color: #a218e3;
-  top: 613px; /* Ajusta la posición vertical del círculo azul */
-  left: 313px; /* Posiciona el círculo azul a la izquierda */
 }
 
 .brown {
   background-color: #544931;
-  top: 613px; /* Ajusta la posición vertical del círculo azul */
-  left: 380px; /* Posiciona el círculo azul a la izquierda */
 }
 
 .P1 {
@@ -410,14 +438,16 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 20px;
   text-align: center;
-  background-color: rgb(251, 171, 223);
+  color: black;
+  border: white;
+  background-color: var(--verde);
 
-  margin-top: 10px;
+  /* margin-top: 10px;
   margin-left: 15px;
-  position: absolute;
+  position: absolute; */
 }
 #rollDiceBtn:hover {
-  background-color: rgb(231, 115, 200);
+  background-color: var(--verde);
 }
 
 /* Cuadro/Boton de pregunta Inicial */
@@ -557,4 +587,67 @@
 
 .close-button:hover {
   background-color: #8d2020;
+}
+
+/* questions */
+.question-container {
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border: 25px solid var(--azul);
+  border-radius: 15px;
+  z-index: 99;
+  position: fixed;
+  right: 50%;
+  left: 20rem;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, .8);
+
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  /* justify-content: center; */
+  flex-direction: column;
+  gap: 200px;
+}
+
+#respuestas {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.question-container h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#respuestas button {
+  border: 4px solid white;
+  padding: 30px;
+  border-radius: 15px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#respuestas button:nth-child(1) {
+  background-color: yellow;
+}
+
+#respuestas button:nth-child(2) {
+  background-color: blue;
+  color: white;
+}
+
+#respuestas button:nth-child(3) {
+  background-color: red;
+  color: white;
+}
+
+.hide {
+  display: none !important;
+  visibility: hidden;
+  opacity: 0;
 }
