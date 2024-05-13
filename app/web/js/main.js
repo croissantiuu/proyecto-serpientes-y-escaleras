@@ -74,7 +74,7 @@ class Game {
                 square.style.backgroundSize = "cover";
                 // Para dar clic en las casilla.
                 square.addEventListener('click', () => {
-                    this.showNotification("...Casilla 11 - Serpiente...\n Retrocede a la casilla 30", 'https://youtu.be/jHWBFyZcLPg?si=b6Y-WcAzzeR23Uos');
+                    this.showNotification("...Casilla 11 - Serpiente...\n Retrocede a la casilla 3", 'https://youtu.be/jHWBFyZcLPg?si=b6Y-WcAzzeR23Uos');
                 });
             }
             // Agregar imagen de serpiente en las casillas 21
